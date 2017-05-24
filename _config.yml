@@ -1,8 +1,22 @@
 # Document:
 # http://simiki.org/docs/configuration.html
 
-url: 
-title: 
-keywords: 
+url: http://wiki.flyhan.com
+title: FlyHan的Wiki
+keywords: wiki Linux
 description: 
-author: 
+author: FlyHan
+
+root: /
+themes_dir: themes
+theme: simple2
+
+category:
+  - name: linux  # 目录名
+    label: Linux  # 目录的别名, 生成首页时可以使用
+  - name: tools
+    label: tools
+
+default_ext: md
+pygments: true
+debug: true

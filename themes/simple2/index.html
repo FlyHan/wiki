@@ -3,20 +3,22 @@
 {%- block title %}{{ site.title }}{% endblock %}
 
 {%- block container %}
-<div class="title">{{ site.title }}</div>
+<div id="wiki_title">{{ site.title }}</div>
 
-<div class="index">
+  <div class="category_item">
   {%- if site.index %}  {# custom index page #}
     {{ page.content }}
   {%- else %}  {# auto generate index page #}
     {%- for category in pages %}
+	<div class="clearfix"></div>
       {%- if site.default_ext not in category %}  {# is category #}
     <div class="category">
       <h2 id="{{ category.name }}">
         {%- if 'label' in category %}{{ category.label }}
         {%- else %}{{ category.name|capitalize }}{% endif %}
       </h2>
-      <div class="category_pages">
+	</div> <!-- end category -->
+      <div class="category_list">
         <ul>
           {%- for page in category.pages %}
           <li class="pagelist">
@@ -40,7 +42,6 @@
           {%- endfor %}
         </ul>
       </div> <!-- end category_pages -->
-    </div> <!-- end category -->
       {%- endif %}
     <div class="clearfix"></div>
     {%- endfor %}
